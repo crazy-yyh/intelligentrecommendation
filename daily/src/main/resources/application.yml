@@ -1,0 +1,15 @@
+server:
+  port: 8003
+
+spring:
+  datasource:
+    devdb:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://btmf-develop-prod-read-out.mysql.rds.aliyuncs.com:3306/bitcube?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: btmf_data
+      password: phMJlHJEtT5oeaC0vTSC
+    masterdb:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://47.114.186.217:3306/bitcube?serverTimezone=GMT%2B8
+      username: root
+      password: j;1FV8bpNRR@jsT_kspZ

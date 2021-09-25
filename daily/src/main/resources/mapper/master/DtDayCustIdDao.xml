@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.master.DtDayCustIdDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.master.DtDayCustIdEntity" id="dtDayCustIdMap">
+        <result property="id" column="id"/>
+        <result property="custId" column="cust_id"/>
+        <result property="lastTime" column="last_time"/>
+        <result property="prov" column="prov"/>
+        <result property="city" column="city"/>
+        <result property="area" column="area"/>
+        <result property="address" column="address"/>
+        <result property="productId" column="product_id"/>
+        <result property="recommendDesc" column="recommend_desc"/>
+        <result property="customerSource" column="customer_source"/>
+        <result property="qualificationScore" column="qualification_score"/>
+        <result property="phoneCode" column="phone_code"/>
+        <result property="phone" column="phone"/>
+        <result property="isUp" column="is_up"/>
+        <result property="marketName" column="market_name"/>
+        <result property="productType" column="product_type"/>
+        <result property="phoneCarrierCity" column="phone_carrier_city"/>
+    </resultMap>
+
+    <select id="querySeniority" resultType="java.lang.Integer">
+        SELECT customer_id,market_recommend_desc,product_id,final_level, prov,city, product_type
+             from dt_seniority where id >0 and `status`='ENABLE' and product_id is not null
+            ${qualificationScore} ${city}
+    </select>
+
+
+</mapper>

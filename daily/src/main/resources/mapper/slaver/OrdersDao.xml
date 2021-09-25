@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.slaver.OrdersDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.slaver.OrdersEntity" id="ordersMap">
+        <result property="id" column="id"/>
+        <result property="customerId" column="customer_id"/>
+        <result property="customerName" column="customer_name"/>
+        <result property="customerAddress" column="customer_address"/>
+        <result property="customerCoordinate" column="customer_coordinate"/>
+        <result property="orderSource" column="order_source"/>
+        <result property="orderType" column="order_type"/>
+        <result property="orderStatus" column="order_status"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="isFinished" column="is_finished"/>
+        <result property="isIntention" column="is_intention"/>
+        <result property="intentionTime" column="intention_time"/>
+        <result property="dispatchCount" column="dispatch_count"/>
+        <result property="dispatchTime" column="dispatch_time"/>
+        <result property="isProductMarketing" column="is_product_marketing"/>
+        <result property="productMarketingTime" column="product_marketing_time"/>
+        <result property="isQuota" column="is_quota"/>
+        <result property="quotaTime" column="quota_time"/>
+        <result property="isSign" column="is_sign"/>
+        <result property="signTime" column="sign_time"/>
+        <result property="isAccount" column="is_account"/>
+        <result property="accountTime" column="account_time"/>
+        <result property="isAfterLoan" column="is_after_loan"/>
+        <result property="afterLoanTime" column="after_loan_time"/>
+        <result property="isException" column="is_exception"/>
+        <result property="exceptionTime" column="exception_time"/>
+        <result property="marketName" column="market_name"/>
+        <result property="marketRecommendDesc" column="market_recommend_desc"/>
+        <result property="channelId" column="channel_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+
+    <select id="queryQualifications" resultType="java.lang.Integer">
+        select distinct customer_id from orders where customer_id in (select customer_id from customer_occupy where occupy_type='0')
+        or (customer_id in (select distinct customer_id from orders
+        where DATE(end_time)> DATE_SUB(CURDATE(),INTERVAL #{day} DAY) or (end_time is null and is_finished='0') ) or customer_id in
+        (select customer_id from order_follow where id>0 and date(create_time) > date_sub(curdate(), INTERVAL 45
+        DAY) and content  REGEXP '拦截|停机|无法接通|打不通|呼叫转移|产品对接|资质|拒绝|不要再打|骗子|逾期了|超龄了|骂|空号|做不了|征信不|负债高|不符合条件|有病|报警|办不了|中介|工号|骚扰|黑户|脏话|恶劣' group by customer_id having count(*)>1)) and id>0
+
+    </select>
+
+</mapper>

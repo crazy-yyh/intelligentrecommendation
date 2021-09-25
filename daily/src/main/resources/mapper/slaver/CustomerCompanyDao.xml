@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.slaver.CustomerCompanyDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.slaver.CustomerCompanyEntity" id="customerCompanyMap">
+        <result property="id" column="id"/>
+        <result property="customerId" column="customer_id"/>
+        <result property="taxesLevel" column="taxes_level"/>
+        <result property="isLegalPerson" column="is_legal_person"/>
+        <result property="isInvolvedInAppeal" column="is_involved_in_appeal"/>
+        <result property="isBusinessLicense" column="is_business_license"/>
+        <result property="businessLicenseRegLength" column="business_license_reg_length"/>
+        <result property="changeMonth" column="change_month"/>
+        <result property="taxesYear" column="taxes_year"/>
+        <result property="taxesMoney" column="taxes_money"/>
+        <result property="billingMoney" column="billing_money"/>
+        <result property="turnoverMoney" column="turnover_money"/>
+        <result property="interestMoney" column="interest_money"/>
+        <result property="loanIdentity" column="loan_identity"/>
+        <result property="corporationStockRatio" column="corporation_stock_ratio"/>
+        <result property="shareholderStockRatio" column="shareholder_stock_ratio"/>
+        <result property="source" column="source"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+
+</mapper>

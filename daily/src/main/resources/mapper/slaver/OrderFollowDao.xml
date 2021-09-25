@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.slaver.OrderFollowDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.slaver.OrderFollowEntity" id="orderFollowMap">
+        <result property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="customerId" column="customer_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="userRealname" column="user_realname"/>
+        <result property="orderStatus" column="order_status"/>
+        <result property="visitType" column="visit_type"/>
+        <result property="content" column="content"/>
+        <result property="nextTime" column="next_time"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+
+</mapper>

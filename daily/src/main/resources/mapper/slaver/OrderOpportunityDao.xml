@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.slaver.OrderOpportunityDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.slaver.OrderOpportunityEntity" id="orderOpportunityMap">
+        <result property="id" column="id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="customerId" column="customer_id"/>
+        <result property="visitProv" column="visit_prov"/>
+        <result property="visitCity" column="visit_city"/>
+        <result property="visitArea" column="visit_area"/>
+        <result property="visitAddress" column="visit_address"/>
+        <result property="visitTime" column="visit_time"/>
+        <result property="isExact" column="is_exact"/>
+        <result property="isContinue" column="is_continue"/>
+        <result property="channelId" column="channel_id"/>
+        <result property="type" column="type"/>
+        <result property="source" column="source"/>
+        <result property="sourceId" column="source_id"/>
+        <result property="allotMethod" column="allot_method"/>
+        <result property="allotStatus" column="allot_status"/>
+        <result property="allotTime" column="allot_time"/>
+        <result property="marketMethod" column="market_method"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+
+</mapper>

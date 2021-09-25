@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.master.CreditLineHaixiaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.master.CreditLineHaixiaEntity" id="creditLineHaixiaMap">
+        <result property="id" column="id"/>
+        <result property="companyName" column="company_name"/>
+        <result property="score" column="score"/>
+        <result property="prequota" column="preQuota"/>
+        <result property="credithistoryscore" column="creditHistoryScore"/>
+        <result property="enterprisebackgroundscore" column="enterpriseBackgroundScore"/>
+        <result property="industrystrengthscore" column="industryStrengthScore"/>
+        <result property="innovationabilityscore" column="innovationAbilityScore"/>
+        <result property="operationsituationscore" column="operationSituationScore"/>
+        <result property="tradescore" column="tradeScore"/>
+        <result property="msg" column="msg"/>
+        <result property="prov" column="prov"/>
+        <result property="custId" column="cust_id"/>
+        <result property="city" column="city"/>
+        <result property="area" column="area"/>
+        <result property="ycPrequota" column="yc_preQuota"/>
+        <result property="ycScore" column="yc_score"/>
+        <result property="bhquota" column="bhQuota"/>
+        <result property="isDo" column="is_do"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.master.DtDailyDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.master.DtDailyEntity" id="dtDailyMap">
+        <result property="jobUid" column="job_uid"/>
+        <result property="jobName" column="job_name"/>
+        <result property="overNum" column="over_num"/>
+        <result property="expression" column="expression"/>
+        <result property="rate" column="rate"/>
+        <result property="rateDesc" column="rate_desc"/>
+        <result property="businessOpportunityNum" column="business_opportunity_num"/>
+        <result property="氧气贷" column="氧气贷"/>
+        <result property="新一贷" column="新一贷"/>
+        <result property="兴业消金" column="兴业消金"/>
+        <result property="车抵贷" column="车抵贷"/>
+        <result property="房抵贷" column="房抵贷"/>
+        <result property="税金贷" column="税金贷"/>
+        <result property="兴安贷" column="兴安贷"/>
+        <result property="纳税ab" column="纳税AB"/>
+        <result property="ai短信回访" column="AI短信回访"/>
+        <result property="科创贷" column="科创贷"/>
+        <result property="workplace" column="workplace"/>
+        <result property="upNum" column="up_num"/>
+        <result property="city" column="city"/>
+        <result property="status" column="status"/>
+        <result property="productId" column="product_id"/>
+        <result property="productType" column="product_type"/>
+        <result property="level" column="level"/>
+        <result property="customerService" column="customer_service"/>
+    </resultMap>
+
+
+</mapper>
