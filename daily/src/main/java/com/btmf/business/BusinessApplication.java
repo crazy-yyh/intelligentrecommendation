@@ -13,7 +13,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @create 2021-09-25 18:48
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.btmf.business.dao"})
+@MapperScan(basePackages = {"com.btmf.business.dao,master","com.btmf.business.dao,slaver"})
 public class BusinessApplication {
 
 
@@ -22,7 +22,7 @@ public class BusinessApplication {
 
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(BusinessApplication.class, args);
+        SpringApplication.run(BusinessApplication.class, args);
 
 //        System.out.println("=============================项目开始启动==============================");
 //

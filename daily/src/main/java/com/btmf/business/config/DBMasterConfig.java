@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
  
-@MapperScan(basePackages = "com.btmf.business.dao.Master", sqlSessionTemplateRef = "MasterSqlSessionTemplate")
+@MapperScan(basePackages = "com.btmf.business.dao.master", sqlSessionTemplateRef = "MasterSqlSessionTemplate")
 public class DBMasterConfig {
  
  

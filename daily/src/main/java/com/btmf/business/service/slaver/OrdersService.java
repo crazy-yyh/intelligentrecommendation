@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface OrdersService extends IService<OrdersEntity> {
 
-    List<Long> qualifications(Integer day, String[]... args);
+    List<Integer> qualifications(Integer day, String[]... args);
 
 
 

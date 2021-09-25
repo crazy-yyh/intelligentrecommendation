@@ -14,7 +14,7 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersDao, OrdersEntity> impl
 
 
     @Override
-    public List<Long> qualifications(Integer day, String[]... args) {
+    public List<Integer> qualifications(Integer day, String[]... args) {
 
         return baseMapper.queryQualifications(day);
     }

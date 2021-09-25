@@ -39,8 +39,6 @@
         <result property="updateTime" column="update_time"/>
         <result property="status" column="status"/>
     </resultMap>
-
-
     <select id="queryQualifications" resultType="java.lang.Integer">
         select distinct customer_id from orders where customer_id in (select customer_id from customer_occupy where occupy_type='0')
         or (customer_id in (select distinct customer_id from orders
@@ -49,5 +47,6 @@
         DAY) and content  REGEXP '拦截|停机|无法接通|打不通|呼叫转移|产品对接|资质|拒绝|不要再打|骗子|逾期了|超龄了|骂|空号|做不了|征信不|负债高|不符合条件|有病|报警|办不了|中介|工号|骚扰|黑户|脏话|恶劣' group by customer_id having count(*)>1)) and id>0
 
     </select>
+
 
 </mapper>

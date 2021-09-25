@@ -15,7 +15,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.btmf.business.dao.Slave", sqlSessionTemplateRef = "SalverSqlSessionTemplate")
+@MapperScan(basePackages = "com.btmf.business.dao.slaver", sqlSessionTemplateRef = "SalverSqlSessionTemplate")
 public class DBSlaverConfig {
  
     @Bean(name = "SalverDataSource")
@@ -28,7 +28,7 @@ public class DBSlaverConfig {
     public SqlSessionFactory testSqlSessionFactory(@Qualifier("SalverDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/slaver*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/slaver/*.xml"));
         return bean.getObject();
     }
  

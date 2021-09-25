@@ -20,5 +20,5 @@ import java.util.List;
 public interface OrdersDao extends BaseMapper<OrdersEntity> {
 
     @Transactional(value = "SalverTransactionManager")
-    List<Long> queryQualifications(@Param("day") Integer day);
+    List<Integer> queryQualifications(@Param("day") Integer day);
 }
