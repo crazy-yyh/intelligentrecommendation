@@ -13,13 +13,16 @@ import java.util.List;
 public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoDao, CustomerInfoEntity> implements CustomerInfoService {
 
     /**
-     * 选出 状态为disable,delete,以及是黑名单的
+     * 信E贷黑名单 1
      * @return
      */
     @Override
-    public List<Integer> exceptData() {
+    public List<Integer> exceptStatusData() {
+        return baseMapper.exceptStatusData();
+    }
 
-        baseMapper.exceptData();
-        return null;
+    @Override
+    public List<Integer> exceptBlackData() {
+        return baseMapper.exceptBlackData();
     }
 }

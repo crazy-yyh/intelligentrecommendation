@@ -2,6 +2,7 @@ package com.btmf.business.controller;
 
 
 import com.btmf.business.entity.master.DistrictEntity;
+import com.btmf.business.service.master.BusinessService;
 import com.btmf.business.service.master.DistrictService;
 import com.btmf.business.service.master.DtDayCustIdService;
 import com.btmf.business.service.slaver.OrdersService;
@@ -28,6 +29,10 @@ public class BusinessController {
     @Autowired
     private DistrictService districtService;
 
+    @Autowired
+    private BusinessService BusinessService;
+
+
     @GetMapping(value = "/test")
     public Result result1() {
 
@@ -40,7 +45,7 @@ public class BusinessController {
         return Result.ok().data("len",longs.size());
     }
 
-    @GetMapping(value = "/test2")
+    @GetMapping()
     public Result result2() {
 
         //        List<Long> longs = dtDayCustIdService.queryDtSeniority(" and final_level>3", " and prov in ('福建省','浙江省')");
@@ -66,6 +71,15 @@ public class BusinessController {
         //        List<Long> longs4 = dtDayCustIdService.queryDtSeniority(" and final_level=0", " and prov in ('福建省','浙江省')");
 
         return Result.ok().data("len",longs1.size());
+    }
+
+    /**
+     * 安妮的需求，上传信E贷
+     */
+    @GetMapping("/queryNumXYD")
+    public Result query_xyd_num() {
+
+        return Result.ok().data("len",BusinessService.queryNum());
     }
 
     /**

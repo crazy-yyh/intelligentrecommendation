@@ -21,4 +21,6 @@ public interface OrdersDao extends BaseMapper<OrdersEntity> {
 
     @Transactional(value = "SalverTransactionManager")
     List<Integer> NoQualifications(@Param("day") Integer day);
+
+    List<Integer> exceptData();
 }

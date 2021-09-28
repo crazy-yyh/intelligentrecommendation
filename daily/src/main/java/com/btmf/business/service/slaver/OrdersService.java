@@ -17,6 +17,12 @@ public interface OrdersService extends IService<OrdersEntity> {
 
     List<Integer> NoQualifications(Integer day, String[]... args);
 
+    /**
+     * 信E贷黑名单 4
+     * @return
+     */
+    List<Integer> exceptData();
+
 
 
 }

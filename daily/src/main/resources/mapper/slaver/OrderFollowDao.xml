@@ -18,6 +18,12 @@
         <result property="updateTime" column="update_time"/>
         <result property="status" column="status"/>
     </resultMap>
+    <select id="exceptData" resultType="java.lang.Integer">
+        select distinct customer_id from order_follow where (create_time>'2021-01-01' and
+         content regexp '已申|敏感|打错|再打|不要打|收材料|没产品|无产品|对不上|不准确|限高|停机|办过|法院|
+         空号|天津|关机|拒接|暂停服务|骂|离职|数据不对|不是这家|家庭主妇|转让|牛|无额度|无纳|没纳|没有纳|拦截|已经做了|都没有|免税|变更|3无|法执|岁|做不|暂停|纳税|逾期|资质|骂|老年|超龄|空号|无法接通|暂停服务|黑户|很差|报警|小|恶劣|停机|三无|产品|注销|女|同行|火|贷不|异常|企业过户|不符|0申|征信|未满') or
+         customer_id in (select customer_id from order_visit where create_time >= DATE_SUB(CURDATE(),INTERVAL 30 DAY))
+    </select>
 
 
 </mapper>

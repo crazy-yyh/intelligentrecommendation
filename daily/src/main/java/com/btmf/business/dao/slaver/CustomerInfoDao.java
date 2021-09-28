@@ -17,5 +17,7 @@ import java.util.List;
 @Mapper
 public interface CustomerInfoDao extends BaseMapper<CustomerInfoEntity> {
 
-    List<Integer> exceptData();
+    List<Integer> exceptStatusData();
+
+    List<Integer> exceptBlackData();
 }

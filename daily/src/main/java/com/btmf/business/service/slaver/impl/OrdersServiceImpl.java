@@ -20,4 +20,13 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersDao, OrdersEntity> impl
 
 
     }
+
+    /**
+     * 信E贷黑名单 4
+     * @return
+     */
+    @Override
+    public List<Integer> exceptData() {
+        return baseMapper.exceptData();
+    }
 }

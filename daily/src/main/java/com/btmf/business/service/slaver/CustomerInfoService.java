@@ -13,8 +13,13 @@ import java.util.List;
  * @date 2021-09-25 22:56:29
  */
 public interface CustomerInfoService extends IService<CustomerInfoEntity> {
+    /**
+     * 信E贷黑名单 1
+     * @return
+     */
+    List<Integer> exceptStatusData();
 
-    List<Integer> exceptData();
+    List<Integer> exceptBlackData();
 
 }
 

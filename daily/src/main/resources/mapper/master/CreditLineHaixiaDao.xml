@@ -25,6 +25,35 @@
         <result property="bhquota" column="bhQuota"/>
         <result property="isDo" column="is_do"/>
     </resultMap>
+    <select id="expectData" resultType="com.btmf.business.entity.master.CreditLineHaixiaEntity">
+
+        select
+            id,
+            company_name,
+            score,
+            preQuota,
+            creditHistoryScore,
+            industryStrengthScore,
+            enterpriseBackgroundScore,
+            innovationAbilityScore,
+            operationSituationScore,
+            tradeScore,
+            msg,
+            prov,
+            cust_id,
+            city,
+            area,
+            yc_preQuota,
+            yc_score,
+            bhQuota,
+            is_do
+        from credit_line_haixia
+            where yc_preQuota>10 and is_do is null and  cust_id in (select id from sqoop.customer_info where prov
+            regexp '福建' and city not regexp '三明|莆田|厦门' and status='ENABLE' and id not in(select customer_id from customer_occupy) and id not
+            in(select customer_id from orders where DATE(create_time)> DATE_SUB(CURDATE(),INTERVAL 5 DAY)) and
+            company_name not regexp '银行|金融|典当|合作社|律|分公司|集团|贷款|房地|房产|个体|食杂') and id in (select min(id)
+            id from credit_line_haixia group by cust_id)
+    </select>
 
 
 </mapper>

@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.btmf.business.entity.master.CreditLineHaixiaEntity;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 厦门国际银行预授信额度
  *
@@ -15,4 +17,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface CreditLineHaixiaDao extends BaseMapper<CreditLineHaixiaEntity> {
 
+    List<CreditLineHaixiaEntity> expectData();
 }

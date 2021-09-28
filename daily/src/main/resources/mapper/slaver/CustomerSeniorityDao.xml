@@ -35,6 +35,9 @@
         <result property="updateTime" column="update_time"/>
         <result property="status" column="status"/>
     </resultMap>
+    <select id="exceptData" resultType="java.lang.Integer">
+        select customer_id from customer_seniority where (is_black='1' or is_not_product='1') and id > 0
+    </select>
 
 
 </mapper>
