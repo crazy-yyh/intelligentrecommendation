@@ -14,8 +14,10 @@ public class OrdersServiceImpl extends ServiceImpl<OrdersDao, OrdersEntity> impl
 
 
     @Override
-    public List<Integer> qualifications(Integer day, String[]... args) {
+    public List<Integer> NoQualifications(Integer day, String[]... args) {
 
-        return baseMapper.queryQualifications(day);
+        return baseMapper.NoQualifications(day);
+
+
     }
 }

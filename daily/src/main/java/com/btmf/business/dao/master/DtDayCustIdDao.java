@@ -18,6 +18,7 @@ import java.util.List;
 @Mapper
 public interface DtDayCustIdDao extends BaseMapper<DtDayCustIdEntity> {
 
-    List<Integer> querySeniority(@Param("qualificationScore") String qualificationScore,
+    //查询所有符合条件的，但还未过滤，初始数据
+    List<Integer> preQuerySeniority(@Param("qualificationScore") String qualificationScore,
                               @Param("city") String city);
 }

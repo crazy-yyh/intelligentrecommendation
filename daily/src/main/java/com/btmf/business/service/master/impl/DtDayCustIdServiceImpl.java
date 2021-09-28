@@ -33,8 +33,12 @@ public class DtDayCustIdServiceImpl extends ServiceImpl<DtDayCustIdDao, DtDayCus
     @Override
     public List<Integer> queryDtSeniority(Integer day, String qualificationScore, String city) {
 
-        List<Integer> list1 = baseMapper.querySeniority(qualificationScore, city);
-        return list1;
+        List<Integer> preData = baseMapper.preQuerySeniority(qualificationScore, city);
+        List<Integer> noQualifications = ordersService.NoQualifications(day);
+
+
+        return preData;
+
     }
 
     @Override

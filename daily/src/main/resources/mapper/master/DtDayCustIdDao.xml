@@ -24,7 +24,7 @@
         <result property="phoneCarrierCity" column="phone_carrier_city"/>
     </resultMap>
 
-    <select id="querySeniority" resultType="java.lang.Integer">
+    <select id="preQuerySeniority" resultType="java.lang.Integer">
         SELECT customer_id,market_recommend_desc,product_id,final_level, prov,city, product_type
              from dt_seniority where id >0 and `status`='ENABLE' and product_id is not null
             ${qualificationScore} ${city}

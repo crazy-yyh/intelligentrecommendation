@@ -39,7 +39,7 @@
         <result property="updateTime" column="update_time"/>
         <result property="status" column="status"/>
     </resultMap>
-    <select id="queryQualifications" resultType="java.lang.Integer">
+    <select id="NoQualifications" resultType="java.lang.Integer">
         select distinct customer_id from orders where customer_id in (select customer_id from customer_occupy where occupy_type='0')
         or (customer_id in (select distinct customer_id from orders
         where DATE(end_time)> DATE_SUB(CURDATE(),INTERVAL #{day} DAY) or (end_time is null and is_finished='0') ) or customer_id in
