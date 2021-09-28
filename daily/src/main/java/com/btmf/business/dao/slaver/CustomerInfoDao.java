@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.btmf.business.entity.slaver.CustomerInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 客户信息表
  * 
@@ -14,5 +16,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface CustomerInfoDao extends BaseMapper<CustomerInfoEntity> {
-	
+
+    List<Integer> exceptData();
 }

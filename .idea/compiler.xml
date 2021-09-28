@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="daily" />
-        <module name="common" />
+        <module name="intelligentrecommendation" />
         <module name="readformaldb" />
       </profile>
     </annotationProcessing>
@@ -20,8 +20,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="business" options="-parameters" />
-      <module name="common" options="-parameters" />
       <module name="daily" options="-parameters" />
+      <module name="intelligentrecommendation" options="-parameters" />
       <module name="readformaldb" options="-parameters" />
     </option>
   </component>

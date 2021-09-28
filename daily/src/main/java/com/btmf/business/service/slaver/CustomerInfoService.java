@@ -3,6 +3,8 @@ package com.btmf.business.service.slaver;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.btmf.business.entity.slaver.CustomerInfoEntity;
 
+import java.util.List;
+
 /**
  * 客户信息表
  *
@@ -11,6 +13,8 @@ import com.btmf.business.entity.slaver.CustomerInfoEntity;
  * @date 2021-09-25 22:56:29
  */
 public interface CustomerInfoService extends IService<CustomerInfoEntity> {
+
+    List<Integer> exceptData();
 
 }
 
