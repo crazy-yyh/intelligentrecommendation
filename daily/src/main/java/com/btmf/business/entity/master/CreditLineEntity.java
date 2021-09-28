@@ -1,5 +1,6 @@
 package com.btmf.business.entity.master;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -22,7 +23,7 @@ public class CreditLineEntity implements Serializable {
 	/**
 	 * 自增ID
 	 */
-	@TableId
+	@TableId(value = "id", type = IdType.AUTO)
 	private Integer id;
 	/**
 	 * 客户公司
