@@ -41,6 +41,9 @@
         <result property="updateTime" column="update_time"/>
         <result property="status" column="status"/>
     </resultMap>
+    <select id="exceptData" resultType="java.lang.Integer">
+        select id from customer_info where status in ('DISABLE','DELETE') and is_blacklist = '1'
+    </select>
 
 
 </mapper>
