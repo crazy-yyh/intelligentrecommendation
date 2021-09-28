@@ -41,7 +41,7 @@ public class BusinessController {
     public Result result2() {
 
         //        List<Long> longs = dtDayCustIdService.queryDtSeniority(" and final_level>3", " and prov in ('福建省','浙江省')");
-        List<Integer> longs1 = ordersService.qualifications(3);
+        List<Integer> longs1 = ordersService.NoQualifications(3);
         //        List<Long> longs2 = dtDayCustIdService.queryDtSeniority(" and final_level=2", " and prov in ('福建省','浙江省')");
         //        List<Long> longs3 = dtDayCustIdService.queryDtSeniority(" and final_level=1", " and prov in ('福建省','浙江省')");
         //        List<Long> longs4 = dtDayCustIdService.queryDtSeniority(" and final_level=0", " and prov in ('福建省','浙江省')");
