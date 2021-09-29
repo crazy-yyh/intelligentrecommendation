@@ -91,9 +91,19 @@ public class BusinessController {
     @GetMapping(value = "/queryIndustryNum")
     public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
 
-        Integer integer = customerInfoService.queryPinAnProduct(jsonObject);
+        List<Integer>  integer = customerInfoService.queryPinAnProduct(jsonObject);
 
-        return Result.ok().data("数量： ",integer);
+        return Result.ok().data("数量： ",integer.size());
+    }
+    /**
+     * 存量分配
+     */
+    @GetMapping(value = "/queryIndustryNum")
+    public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
+
+        List<Integer>  integer = customerInfoService.queryPinAnProduct(jsonObject);
+
+        return Result.ok().data("数量： ",integer.size());
     }
 
 

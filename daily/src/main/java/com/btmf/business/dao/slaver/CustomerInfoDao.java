@@ -22,7 +22,7 @@ public interface CustomerInfoDao extends BaseMapper<CustomerInfoEntity> {
 
     List<Integer> exceptBlackData();
 
-    Integer queryPinAnProductNum(@Param("prov") String prov,
+    List<Integer> queryPinAnProductNum(@Param("prov") String prov,
                                  @Param("city") String city,
                                  @Param("area") String area);
 }

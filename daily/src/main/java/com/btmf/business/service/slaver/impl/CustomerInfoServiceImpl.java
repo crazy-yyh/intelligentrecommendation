@@ -33,7 +33,7 @@ public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoDao, Custom
      * @return
      */
     @Override
-    public Integer queryPinAnProduct(JSONObject jsonObject) {
+    public  List<Integer>  queryPinAnProduct(JSONObject jsonObject) {
 
         String city = "";
         String area = "";

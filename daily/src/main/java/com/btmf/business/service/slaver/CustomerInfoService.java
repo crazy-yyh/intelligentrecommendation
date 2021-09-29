@@ -22,6 +22,6 @@ public interface CustomerInfoService extends IService<CustomerInfoEntity> {
 
     List<Integer> exceptBlackData();
 
-    Integer queryPinAnProduct(JSONObject jsonObject);
+    List<Integer>  queryPinAnProduct(JSONObject jsonObject);
 }
 
