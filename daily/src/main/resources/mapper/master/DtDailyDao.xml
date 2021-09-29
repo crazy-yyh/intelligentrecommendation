@@ -31,6 +31,16 @@
         <result property="level" column="level"/>
         <result property="customerService" column="customer_service"/>
     </resultMap>
+    <select id="queryQualificationsNum" resultType="java.lang.Integer">
+
+
+            select customer_id,product_id,market_recommend_desc from dt_seniority
+            where prov regexp #{prov} and city regexp '泉州|福州|南平' and customer_id not in (select customer_id from customer_occupy where customer_id > 0 ) and house_mortgage_type ='1' and status = 'ENABLE' and mortgage_money = 2 and market_recommend_desc regexp '有资质'
+            AND final_level>0 and customer_id not in (select distinct customer_id from orders
+            where DATE(end_time)> DATE_SUB(CURDATE(),INTERVAL 1 DAY) or (end_time is null and is_finished='0'))
+            and customer_id in (select id from sqoop.customer_info where prov='福建省' and city regexp '泉州|福州|南平' and status='ENABLE' and
+            company_name not regexp '银行|金融|典当|合作社|律师|分公司|集团|贷款|房地产')
+    </select>
 
 
 </mapper>

@@ -39,12 +39,16 @@ public class CustomerInfoServiceImpl extends ServiceImpl<CustomerInfoDao, Custom
         String area = "";
 
         String prov = jsonObject.getString("prov");
+        System.out.println("初始化省份");
         String cityArray = jsonObject.getString("city");
 //        for (int i = 0; i < cityArray.size(); i++) {
 //            city = cityArray.get(i).toString()+"|";
 //        }
+        System.out.println("初始化市区");
 
         String areaArray = jsonObject.getString("area");
+
+        System.out.println("初始化地区，开始查询，请稍后。。。。。。");
 
         return baseMapper.queryPinAnProductNum(prov,cityArray,areaArray);
     }

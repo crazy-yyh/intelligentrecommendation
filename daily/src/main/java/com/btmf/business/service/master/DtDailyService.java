@@ -1,5 +1,6 @@
 package com.btmf.business.service.master;
 
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.btmf.business.entity.master.DtDailyEntity;
 
@@ -16,5 +17,6 @@ public interface DtDailyService extends IService<DtDailyEntity> {
 
     List<Integer> jobUidList();
 
+    List<Integer> queryQualificationsNum(JSONObject jsonObject);
 }
 

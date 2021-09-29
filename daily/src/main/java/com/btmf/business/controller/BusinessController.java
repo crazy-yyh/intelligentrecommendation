@@ -6,10 +6,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.btmf.business.entity.master.DistrictEntity;
 import com.btmf.business.service.master.BusinessService;
 import com.btmf.business.service.master.DistrictService;
+import com.btmf.business.service.master.DtDailyService;
 import com.btmf.business.service.master.DtDayCustIdService;
 import com.btmf.business.service.slaver.CustomerInfoService;
 import com.btmf.business.service.slaver.OrdersService;
 import com.btmf.common.utils.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +24,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/dailyTask")
+@Api(tags = "BusinessController",description = "日常任务")
 public class BusinessController {
 
     @Autowired
@@ -33,10 +37,14 @@ public class BusinessController {
     private DistrictService districtService;
 
     @Autowired
-    private BusinessService BusinessService;
+    private BusinessService businessService;
+
 
     @Autowired
     private CustomerInfoService customerInfoService;
+
+    @Autowired
+    private DtDailyService dtDailyService;
 
 
     @GetMapping(value = "/test")
@@ -63,9 +71,9 @@ public class BusinessController {
         return Result.ok().data("len",longs1.size());
     }
 
-    /**
-     * 棕苗的需求，查询数量
-     */
+//    /**
+//     * 棕苗的需求，查询数量
+//     */
 //    @GetMapping(value = "/test2")
 //    public Result queryIndustryNum() {
 //
@@ -73,7 +81,7 @@ public class BusinessController {
 //
 //        return Result.ok().data("len",longs1.size());
 //    }
-//
+
 //    /**
 //     * 棕苗的需求，保单
 //     */
@@ -88,23 +96,37 @@ public class BusinessController {
     /**
      * 棕苗的需求，平安产品
      */
-    @GetMapping(value = "/queryIndustryNum")
+    @PostMapping(value = "/queryIndustryNum")
+    @ApiOperation(value = "查询平安产品数量")
     public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
 
         List<Integer>  integer = customerInfoService.queryPinAnProduct(jsonObject);
 
         return Result.ok().data("数量： ",integer.size());
     }
+
     /**
-     * 存量分配
+     * 有资质
      */
-    @GetMapping(value = "/queryIndustryNum")
-    public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
+    @PostMapping(value = "/queryQualificationsNum")
+    @ApiOperation(value = "查询有资质数量")
+    public Result queryQualificationsNum(@RequestBody JSONObject jsonObject) {
 
-        List<Integer>  integer = customerInfoService.queryPinAnProduct(jsonObject);
+        List<Integer>  integer = dtDailyService.queryQualificationsNum(jsonObject);
 
         return Result.ok().data("数量： ",integer.size());
     }
+
+//    /**
+//     * 存量分配
+//     */
+//    @GetMapping(value = "/queryIndustryNum")
+//    public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
+//
+//        List<Integer>  integer = customerInfoService.queryPinAnProduct(jsonObject);
+//
+//        return Result.ok().data("数量： ",integer.size());
+//    }
 
 
 
@@ -129,7 +151,7 @@ public class BusinessController {
     @GetMapping("/queryNumXYD")
     public Result query_xyd_num() {
 
-        return Result.ok().data("len",BusinessService.queryNum());
+        return Result.ok().data("len",businessService.queryNum());
     }
 
     /**

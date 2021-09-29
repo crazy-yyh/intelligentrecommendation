@@ -2,6 +2,7 @@ package com.btmf.business;
 
 import com.btmf.business.service.master.DtDayCustIdService;
 import com.btmf.business.service.slaver.OrdersService;
+import io.swagger.annotations.Api;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,7 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 @SpringBootApplication
 @MapperScan(basePackages = {"com.btmf.business.dao,master","com.btmf.business.dao,slaver"})
+
 public class BusinessApplication {
 
 
