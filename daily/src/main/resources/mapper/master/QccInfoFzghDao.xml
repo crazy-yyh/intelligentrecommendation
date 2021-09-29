@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.btmf.business.dao.master.QccInfoFzghDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.btmf.business.entity.master.QccInfoFzghEntity" id="qccInfoFzghMap">
+        <result property="rowkey" column="rowkey"/>
+        <result property="id" column="id"/>
+        <result property="companyName" column="company_name"/>
+        <result property="regstatus" column="regStatus"/>
+        <result property="custName" column="cust_name"/>
+        <result property="registCapital" column="regist_capital"/>
+        <result property="registCapitalDesc" column="regist_capital_desc"/>
+        <result property="trueCapitalDesc" column="true_capital_desc"/>
+        <result property="applyTime" column="apply_time"/>
+        <result property="ratifyTime" column="ratify_time"/>
+        <result property="timeEnd" column="time_end"/>
+        <result property="prov" column="prov"/>
+        <result property="city" column="city"/>
+        <result property="area" column="area"/>
+        <result property="socialCode" column="social_code"/>
+        <result property="taxnumber" column="taxNumber"/>
+        <result property="registrationNum" column="registration_num"/>
+        <result property="organizerCode" column="organizer_code"/>
+        <result property="insuredNum" column="insured_num"/>
+        <result property="companytype" column="companyType"/>
+        <result property="industry" column="industry"/>
+        <result property="oldCompanyName" column="old_company_name"/>
+        <result property="address" column="address"/>
+        <result property="newAddress" column="new_address"/>
+        <result property="web" column="web"/>
+        <result property="phone" column="phone"/>
+        <result property="phones" column="phones"/>
+        <result property="custEmail" column="cust_email"/>
+        <result property="otherEmail" column="other_email"/>
+        <result property="bussScope" column="buss_scope"/>
+        <result property="hashCode" column="hash_code"/>
+        <result property="phoneCode" column="phone_code"/>
+        <result property="custCode" column="cust_code"/>
+        <result property="isNew" column="is_new"/>
+        <result property="wrongMsg" column="wrong_msg"/>
+        <result property="custId" column="cust_id"/>
+        <result property="englishCompanyName" column="english_company_name"/>
+    </resultMap>
+
+
+</mapper>
