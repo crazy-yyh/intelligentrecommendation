@@ -4,6 +4,7 @@ package com.btmf.business.dao.slaver;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.btmf.business.entity.slaver.CustomerInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,4 +21,8 @@ public interface CustomerInfoDao extends BaseMapper<CustomerInfoEntity> {
     List<Integer> exceptStatusData();
 
     List<Integer> exceptBlackData();
+
+    Integer queryPinAnProductNum(@Param("prov") String prov,
+                                 @Param("city") String city,
+                                 @Param("area") String area);
 }

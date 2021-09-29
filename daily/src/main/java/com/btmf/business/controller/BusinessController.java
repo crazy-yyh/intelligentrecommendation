@@ -1,10 +1,13 @@
 package com.btmf.business.controller;
 
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.btmf.business.entity.master.DistrictEntity;
 import com.btmf.business.service.master.BusinessService;
 import com.btmf.business.service.master.DistrictService;
 import com.btmf.business.service.master.DtDayCustIdService;
+import com.btmf.business.service.slaver.CustomerInfoService;
 import com.btmf.business.service.slaver.OrdersService;
 import com.btmf.common.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +35,9 @@ public class BusinessController {
     @Autowired
     private BusinessService BusinessService;
 
+    @Autowired
+    private CustomerInfoService customerInfoService;
+
 
     @GetMapping(value = "/test")
     public Result result1() {
@@ -56,6 +62,40 @@ public class BusinessController {
 
         return Result.ok().data("len",longs1.size());
     }
+
+    /**
+     * 棕苗的需求，查询数量
+     */
+//    @GetMapping(value = "/test2")
+//    public Result queryIndustryNum() {
+//
+//
+//
+//        return Result.ok().data("len",longs1.size());
+//    }
+//
+//    /**
+//     * 棕苗的需求，保单
+//     */
+//    @GetMapping(value = "/test2")
+//    public Result queryIndustryNum() {
+//
+//
+//
+//        return Result.ok().data("len",longs1.size());
+//    }
+
+    /**
+     * 棕苗的需求，平安产品
+     */
+    @GetMapping(value = "/queryIndustryNum")
+    public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
+
+        Integer integer = customerInfoService.queryPinAnProduct(jsonObject);
+
+        return Result.ok().data("数量： ",integer);
+    }
+
 
 
     /**

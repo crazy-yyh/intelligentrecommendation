@@ -48,6 +48,12 @@
     <select id="exceptBlackData" resultType="java.lang.Integer">
         select id from customer_info where is_blacklist = '1'
     </select>
+    <select id="queryPinAnProductNum" resultType="java.lang.Integer">
+        select id from customer_info where prov=#{prov} and city not regexp '莆田|厦门' and status='ENABLE' and is_blacklist='0'
+        and id not in (select customer_id from customer_occupy) and
+        (id in (select customer_id from customer_house where mortgage_money in ('2','3','4')) or id in (select customer_id
+ from customer_insurance where insurance_money in ('3','4')) or id in (select  customer_id from order_sign where product_id in ('1','52','3')))
+    </select>
 
 
 </mapper>

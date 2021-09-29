@@ -1,5 +1,6 @@
 package com.btmf.business.service.slaver;
 
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.btmf.business.entity.slaver.CustomerInfoEntity;
 
@@ -21,5 +22,6 @@ public interface CustomerInfoService extends IService<CustomerInfoEntity> {
 
     List<Integer> exceptBlackData();
 
+    Integer queryPinAnProduct(JSONObject jsonObject);
 }
 
