@@ -2,6 +2,7 @@ package com.btmf.business.service.slaver;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.btmf.business.entity.master.UpKafkaEntity;
 import com.btmf.business.entity.slaver.CustomerInfoEntity;
 
 import java.util.List;
@@ -23,5 +24,7 @@ public interface CustomerInfoService extends IService<CustomerInfoEntity> {
     List<Integer> exceptBlackData();
 
     List<Integer>  queryPinAnProduct(JSONObject jsonObject);
+
+    Boolean  distribute_PinAn_Data(JSONObject jsonObject);
 }
 

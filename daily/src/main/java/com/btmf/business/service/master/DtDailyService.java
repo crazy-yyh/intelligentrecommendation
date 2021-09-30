@@ -18,5 +18,7 @@ public interface DtDailyService extends IService<DtDailyEntity> {
     List<Integer> jobUidList();
 
     List<Integer> queryQualificationsNum(JSONObject jsonObject);
+
+    Boolean distribute_Qualifications_Data(JSONObject jsonObject);
 }
 

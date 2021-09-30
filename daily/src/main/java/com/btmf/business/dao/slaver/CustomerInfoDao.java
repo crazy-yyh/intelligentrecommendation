@@ -25,4 +25,6 @@ public interface CustomerInfoDao extends BaseMapper<CustomerInfoEntity> {
     List<Integer> queryPinAnProductNum(@Param("prov") String prov,
                                  @Param("city") String city,
                                  @Param("area") String area);
+
+//    List<Integer> distributeData(String prov, String cityArray, String areaArray);
 }

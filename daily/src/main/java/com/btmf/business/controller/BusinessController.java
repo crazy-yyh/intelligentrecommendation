@@ -1,7 +1,5 @@
 package com.btmf.business.controller;
 
-
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.btmf.business.entity.master.DistrictEntity;
 import com.btmf.business.service.master.BusinessService;
@@ -51,22 +49,17 @@ public class BusinessController {
     public Result result1() {
 
         List<Integer> longs = dtDayCustIdService.queryDtSeniority(1," and final_level>3", " and prov in ('福建省','浙江省')");
-//        List<Long> longs1 = dtDayCustIdService.queryDtSeniority(" and final_level=3", " and prov in ('福建省','浙江省')");
-//        List<Long> longs2 = dtDayCustIdService.queryDtSeniority(" and final_level=2", " and prov in ('福建省','浙江省')");
-//        List<Long> longs3 = dtDayCustIdService.queryDtSeniority(" and final_level=1", " and prov in ('福建省','浙江省')");
-//        List<Long> longs4 = dtDayCustIdService.queryDtSeniority(" and final_level=0", " and prov in ('福建省','浙江省')");
 
         return Result.ok().data("len",longs.size());
     }
 
     @GetMapping()
+//    @ApiOperation(value = "查询平安产品数量")
     public Result result2() {
 
-        //        List<Long> longs = dtDayCustIdService.queryDtSeniority(" and final_level>3", " and prov in ('福建省','浙江省')");
+
         List<Integer> longs1 = ordersService.NoQualifications(3);
-        //        List<Long> longs2 = dtDayCustIdService.queryDtSeniority(" and final_level=2", " and prov in ('福建省','浙江省')");
-        //        List<Long> longs3 = dtDayCustIdService.queryDtSeniority(" and final_level=1", " and prov in ('福建省','浙江省')");
-        //        List<Long> longs4 = dtDayCustIdService.queryDtSeniority(" and final_level=0", " and prov in ('福建省','浙江省')");
+
 
         return Result.ok().data("len",longs1.size());
     }
@@ -112,21 +105,32 @@ public class BusinessController {
     @ApiOperation(value = "查询有资质数量")
     public Result queryQualificationsNum(@RequestBody JSONObject jsonObject) {
 
-        List<Integer>  integer = dtDailyService.queryQualificationsNum(jsonObject);
+        List<Integer> integer = dtDailyService.queryQualificationsNum(jsonObject);
 
         return Result.ok().data("数量： ",integer.size());
     }
 
-//    /**
-//     * 存量分配
-//     */
-//    @GetMapping(value = "/queryIndustryNum")
-//    public Result queryIndustryNum(@RequestBody JSONObject jsonObject) {
-//
-//        List<Integer>  integer = customerInfoService.queryPinAnProduct(jsonObject);
-//
-//        return Result.ok().data("数量： ",integer.size());
-//    }
+    /**
+     * 平安存量分配
+     */
+    @GetMapping(value = "/distributeByPinAn")
+    public Result  distributeByPinAn(@RequestBody JSONObject jsonObject) {
+
+        Boolean aBoolean = customerInfoService.distribute_PinAn_Data(jsonObject);
+
+        return Result.ok().data("数量： ",aBoolean);
+    }
+
+    /**
+     * 有资质 存量分配
+     */
+    @GetMapping(value = "/distributeByQualifications")
+    public Result distributeByQualifications(@RequestBody JSONObject jsonObject) {
+
+        Boolean aBoolean = dtDailyService.distribute_Qualifications_Data(jsonObject);
+
+        return Result.ok().data("数量： ",aBoolean);
+    }
 
 
 
